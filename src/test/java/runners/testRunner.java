@@ -11,7 +11,7 @@ import org.testng.annotations.DataProvider;
 import java.time.Duration;
 
 @CucumberOptions(features = "features",
-        glue = "com.shidqiadiatma.steps",
+        glue = "steps",
         tags = "",
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
