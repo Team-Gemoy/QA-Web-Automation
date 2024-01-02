@@ -8,11 +8,11 @@
     ├─ report
     ├─ src
         ├─ main     
-            ├─ java\com\shidqiadiatma
+            ├─ java
                 ├─ factories             # Browser & driver manager
                 ├─ helpers               # Java faker & keyword selenium
         ├─ test
-             ├─ java\com\shidqiadiatma
+             ├─ java
                 ├─ features              # Gherkin test cases 
                 ├─ pages                 # Page object
                 ├─ runners               # Testng runner
