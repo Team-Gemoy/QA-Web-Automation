@@ -4,7 +4,7 @@
 
 <br/>The folder structure is as following:
 
-    secondhand-web-selenium-cucumber
+    QA-Web-Automation
     ├─ report
     ├─ src
         ├─ main     
