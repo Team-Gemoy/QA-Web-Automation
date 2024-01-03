@@ -1,8 +1,5 @@
 # QA-Web-Automation
 
-## Folder Structure
-
-<br/>The folder structure is as following:
 
     QA-Web-Automation
     ├─ report
@@ -22,4 +19,3 @@
     ├─ .gitignore
     ├─ pom.xml
     ├─ README.MD
-    ├─ testng.xml

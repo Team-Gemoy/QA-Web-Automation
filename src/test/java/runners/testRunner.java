@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import java.time.Duration;
 
-@CucumberOptions(features = "features",
+@CucumberOptions(features = "src/test/java/features",
         glue = "steps",
         tags = "",
         plugin = {"pretty",
@@ -21,7 +21,7 @@ import java.time.Duration;
 public class testRunner extends AbstractTestNGCucumberTests {
 
     @Override
-    @DataProvider(parallel = true)
+    @DataProvider(parallel = false)
     public Object[][] scenarios() {return super.scenarios();}
 
 
