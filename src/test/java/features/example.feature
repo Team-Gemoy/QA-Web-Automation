@@ -1,7 +1,7 @@
 @example
 Feature: Login
 
-  @login @negative
+  @negative
   Scenario Outline: As a user, I can't log in using wrong password to secondhand-binaracademy
     Given user navigate to url "https://secondhand.binaracademy.org/users/sign_in"
     When user login using "wrong password"
