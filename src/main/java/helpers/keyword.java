@@ -14,11 +14,13 @@ import org.testng.Assert;
 
 import java.io.File;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class keyword {
 
     public static void navigateToUrl(String url) {
         driverManager.getInstance().getDriver().get(url);
+        waitFor(2);
     }
 
     public static void tapElement(WebElement webElement) {
@@ -37,6 +39,19 @@ public class keyword {
     public static void uploadFile(WebElement fileInput, String filePath) {
         wait_element_to_be_displayed(fileInput);
         fileInput.sendKeys(filePath);
+    }
+
+    public static void waitFor(int seconds) {
+        try {
+            TimeUnit.SECONDS.sleep(seconds);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    public static void verifyWordingOnElement(WebElement element, String expectedText) {
+        String actualText = element.getText();
+        Assert.assertEquals(actualText, expectedText);
     }
 
     public static void validate_element_is_visible_and_enabled(WebElement webElement) {

@@ -9,31 +9,59 @@ import io.cucumber.java.en.When;
 
 public class loginStep {
 
-    @When("user login using {string}")
-    public void loginAs(String credentialType) {
-
-        String email;
-        String password;
-
-        switch (credentialType) {
-            case "correct registered credential" -> {
-                email = "shidqiadiatma@mail.com";
-                password = "P@ssw0rd123";
-            }
-            case "wrong password" -> {
-                email = "shidqiadiatma@mail.com";
-                password = "wrong_password";
-            }
-            default -> throw new RuntimeException("credential type doesn't exist");
-        }
-        loginPage loginPage = new loginPage(driverManager.getInstance().getDriver());
-        loginPage.userLogin(email, password);
+    private loginPage getLoginPage() {
+        return new loginPage(driverManager.getInstance().getDriver());
     }
 
-    @Then("user verify snackbar error with value {string} exists")
-    public void  userVerifySnackbarErrorWithValue(String value) {
-        new loginPage(driverManager.getInstance().getDriver()).
-                verify_snackbar_error_exist(value);
+    @When("user input valid email")
+    public void inputValidEmail() {
+        getLoginPage().inputEmail("sa@dispostable.com");
     }
 
+    @When("user input unregistered email")
+    public void inputUnregisteredEmail() {
+        getLoginPage().inputEmail("sa@dispostable.com");
+    }
+
+    @When("user input email without @")
+    public void userinputInvalidEmail() {
+        loginPage loginPage = getLoginPage();
+        loginPage.clickLogin();
+        loginPage.inputEmail("shidqiadiatma.com");
+    }
+
+    @And("user input correct password")
+    public void inputCorrectPassword() {
+        getLoginPage().inputPassword("Password123");
+    }
+
+    @And("user input incorrect password")
+    public void inputIncorrectPassword() {
+        getLoginPage().inputPassword("Password123");
+    }
+
+    @And("user click Login button")
+    public void clickLoginButton() {
+        getLoginPage().clickLogin();
+    }
+
+    @Then("user should be successfully login")
+    public void userSuccessLogin() {
+        getLoginPage().clickCheckbox(); // example
+    }
+
+    @Then("user should see an snackbar error message")
+    public void userFailedLogin() {
+        getLoginPage().alertSnackbarMessage("User not found or password didn't match");
+    }
+
+    @Then("user should see an error message indicating empty fields")
+    public void userEmptyField() {
+        getLoginPage().alertInlineMessageForEmptyScenario("Email is required", "Password is required");
+    }
+
+    @Then("user should see an error message indicating invalid email format")
+    public void userSeeInlineEmail() {
+        getLoginPage().alertInlineMessageForInvalidFormatEmail("Please input a valid email format");
+    }
 }
