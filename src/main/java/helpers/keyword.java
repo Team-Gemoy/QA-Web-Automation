@@ -3,10 +3,7 @@ package helpers;
 import factories.driverManager;
 import helpers.enums.fileType;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -90,5 +87,8 @@ public class keyword {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static void inputText(Keys enter) {
     }
 }

@@ -46,25 +46,24 @@ public class loginPage {
     @FindBy(xpath = "/html/body/div[1]/div/div[1]/form/p[2]")
     private static WebElement inlinePassword;
 
-    @FindBy(xpath = "//h1[@class='font-extrabold uppercase text-4xl mb-3']")
+    @FindBy(xpath = "/html/body/div[1]/div/div[1]/h1")
     private WebElement title_page;
     @FindBy(id = "check")
     private WebElement checkbox_rememberMe;
     @FindBy(xpath = "//a[@href='/register']")
     private WebElement btnLink_signUp;
 
-    public void userLogin(String email, String password) {
-        keyword.inputText(input_email, email);
-        keyword.inputText(input_password, password);
-        keyword.tapElement(button_login);
+    public void navigateToForgotPasswordPage() {
+        keyword.tapElement(label_forgotPassword);
     }
 
-    public void verifyComponentOnLoginPage(String text1, String text2, String text3,String text4, String text5) {
+    public void verifyComponentOnLoginPage(String text1, String text2, String text3,String text4, String text5, String text6) {
         keyword.verifyWordingOnElement(title_page, text1);
         keyword.verifyWordingOnElement(label_email, text2);
         keyword.verifyWordingOnElement(label_password, text3);
         keyword.verifyWordingOnElement(label_rememberMe, text4);
         keyword.verifyWordingOnElement(label_forgotPassword, text5);
+        keyword.verifyWordingOnElement(btnLink_signUp, text6);
     }
 
     public void inputEmail(String email) {
