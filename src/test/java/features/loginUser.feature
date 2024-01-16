@@ -1,5 +1,5 @@
 @login
-Feature: Login
+Feature: Login User
 
   @login1 @positive
   Scenario: As a user, I want to ensure that I can successfully log in to the application using my credentials.

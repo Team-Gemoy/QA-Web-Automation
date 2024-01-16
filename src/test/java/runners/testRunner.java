@@ -12,7 +12,7 @@ import java.time.Duration;
 
 @CucumberOptions(features = "src/test/java/features",
         glue = "steps",
-        tags = "@login2",
+        tags = "@negative",
         plugin = {"pretty",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "json:target/cucumber-report.json"
