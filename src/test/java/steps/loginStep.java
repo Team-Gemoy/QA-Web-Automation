@@ -2,6 +2,7 @@ package steps;
 
 import factories.driverManager;
 import helpers.keyword;
+import pages.homePage;
 import pages.loginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -12,10 +13,12 @@ public class loginStep {
     private loginPage getLoginPage() {
         return new loginPage(driverManager.getInstance().getDriver());
     }
-
+    private homePage getHomePage() {
+        return new homePage(driverManager.getInstance().getDriver());
+    }
     @When("user input valid email")
     public void inputValidEmail() {
-        getLoginPage().inputEmail("sa@dispostable.com");
+        getLoginPage().inputEmail("2dda8265aa64dd@cashbenties.com");
     }
 
     @When("user input unregistered email")
@@ -32,7 +35,7 @@ public class loginStep {
 
     @And("user input correct password")
     public void inputCorrectPassword() {
-        getLoginPage().inputPassword("Password123");
+        getLoginPage().inputPassword("P@ssw0rd123");
     }
 
     @And("user input incorrect password")
@@ -47,12 +50,17 @@ public class loginStep {
 
     @Then("user should be successfully login")
     public void userSuccessLogin() {
-        getLoginPage().clickCheckbox(); // example
+        getHomePage().verifyUserAlreadyOnDashboard();
     }
 
-    @Then("user should see an snackbar error message")
-    public void userFailedLogin() {
-        getLoginPage().alertSnackbarMessage("User not found or password didn't match");
+    @Then("user should see an snackbar error message for incorrect password")
+    public void userFailedLoginIncorrectPassword() {
+        getLoginPage().alertSnackbarMessage("Login credential don't match an account in our system");
+    }
+
+    @Then("user should see an snackbar error message for unregistered email")
+    public void userFailedLoginUnregisteredEmail() {
+        getLoginPage().alertSnackbarMessage("User is disabled, please check your email to activate your account");
     }
 
     @Then("user should see an error message indicating empty fields")
