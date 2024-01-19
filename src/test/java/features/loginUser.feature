@@ -8,6 +8,7 @@ Feature: Login User
     * user input correct password
     * user click Login button
     Then user should be successfully login
+    * user take screenshot "wafdsbhfw ee"
 
   @login2 @negative
   Scenario: As a user, I want the system to notify me when I enter an incorrect password during the login process.
@@ -15,7 +16,7 @@ Feature: Login User
     When user input valid email
     * user input incorrect password
     * user click Login button
-    Then user should see an snackbar error message
+    Then user should see an snackbar error message for incorrect password
     * user take screenshot "incorrect-password"
 
   @login2 @negative
@@ -24,7 +25,7 @@ Feature: Login User
     When user input unregistered email
     * user input correct password
     * user click Login button
-    Then user should see an snackbar error message
+    Then user should see an snackbar error message for unregistered email
     * user take screenshot "unregistered-email"
 
   @login2 @negative
