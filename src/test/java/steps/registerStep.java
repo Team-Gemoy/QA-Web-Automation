@@ -15,12 +15,12 @@ public class registerStep {
 
     @When("user input a valid email")
     public void inputValidEmail() {
-        getRegisterPage().inputEmail(randomData.getEmail());
+        getRegisterPage().inputEmail(randomData.generateFakeUUID() + "@gmail.com");
     }
 
     @When("user input a invalid email format")
     public void inputInValidEmail() {
-        getRegisterPage().inputEmail("shidqiadiatma.com");
+        getRegisterPage().inputEmail("IkanHiuMakanTomatILoveYouSoMuch.CoM");
     }
     @And("user input a fullname")
     public void inputFullname() {
@@ -70,7 +70,18 @@ public class registerStep {
 
     @Then("inline error message appears that Password require minimum eight characters, at least one letter and one number")
     public void inlineErrorAppearsPasswordNotMatchCriteria() {
-        getRegisterPage().verifyInlineErrorForPasswordNotMatchCriteria("Password require minimum eight characters, at least one letter and one number");
+        getRegisterPage().verifyInlineErrorForPasswordNotMatchCriteria("Password require minimum eight characters, at least one uppercase and one number");
     }
+
+    @Then("user should be successfully register")
+    public void verifyUserSuccessfullyRegister() {
+        getRegisterPage().verifyUserSuccessfullyRegister("Please check email for activation");
+    }
+
+    @When("user clear all data on register page")
+    public void clearAllData() {
+        getRegisterPage().userClearAllData();
+    }
+
 
 }

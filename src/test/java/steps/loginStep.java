@@ -1,7 +1,6 @@
 package steps;
 
 import factories.driverManager;
-import helpers.keyword;
 import pages.homePage;
 import pages.loginPage;
 import io.cucumber.java.en.And;
@@ -18,19 +17,19 @@ public class loginStep {
     }
     @When("user input valid email")
     public void inputValidEmail() {
-        getLoginPage().inputEmail("2dda8265aa64dd@cashbenties.com");
+        getLoginPage().inputEmail("miyali4273@bitofee.com");
     }
 
     @When("user input unregistered email")
     public void inputUnregisteredEmail() {
-        getLoginPage().inputEmail("sa@dispostable.com");
+        getLoginPage().inputEmail("unregistered@dispostable.com");
     }
 
-    @When("user input email without @")
+    @When("user input invalid email format")
     public void userinputInvalidEmail() {
         loginPage loginPage = getLoginPage();
         loginPage.clickLogin();
-        loginPage.inputEmail("shidqiadiatma.com");
+        loginPage.inputEmail("IkanHiuMakanTomat.Com");
     }
 
     @And("user input correct password")
@@ -56,6 +55,7 @@ public class loginStep {
     @Then("user should see an snackbar error message for incorrect password")
     public void userFailedLoginIncorrectPassword() {
         getLoginPage().alertSnackbarMessage("Login credential don't match an account in our system");
+        getLoginPage().closeSnackbar();
     }
 
     @Then("user should see an snackbar error message for unregistered email")
@@ -66,10 +66,16 @@ public class loginStep {
     @Then("user should see an error message indicating empty fields")
     public void userEmptyField() {
         getLoginPage().alertInlineMessageForEmptyScenario("Email is required", "Password is required");
+        getLoginPage().closeSnackbar();
     }
 
     @Then("user should see an error message indicating invalid email format")
     public void userSeeInlineEmail() {
         getLoginPage().alertInlineMessageForInvalidFormatEmail("Please input a valid email format");
+    }
+
+    @And("user navigate to forgot password page")
+    public void navigaeToForgotPasswordPage() {
+        getLoginPage().navigateToForgotPasswordPage();
     }
 }

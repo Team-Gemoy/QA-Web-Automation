@@ -12,10 +12,12 @@ import java.time.Duration;
 
 @CucumberOptions(features = "src/test/java/features",
         glue = "steps",
-        tags = "@negative",
-        plugin = {"pretty",
+        tags = "@End2EndPhase1",
+        plugin = {
+                "pretty",
+                "html:reports/cucumber-result/cucumber-reports.html",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                "json:target/cucumber-report.json"
+                "json:reports/cucumber-result/cucumber-reports.json"
         }, monochrome = true)
 
 public class testRunner extends AbstractTestNGCucumberTests {

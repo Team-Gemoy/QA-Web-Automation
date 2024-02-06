@@ -53,6 +53,9 @@ public class loginPage {
     @FindBy(xpath = "//a[@href='/register']")
     private WebElement btnLink_signUp;
 
+    @FindBy(xpath = "/html/body/div/div/div[1]/div[2]/span[2]")
+    private static WebElement closeSnackbar;
+
     public void navigateToForgotPasswordPage() {
         keyword.tapElement(label_forgotPassword);
     }
@@ -67,6 +70,7 @@ public class loginPage {
     }
 
     public void inputEmail(String email) {
+        keyword.clearText(input_email);
         keyword.inputText(input_email, email);
     }
 
@@ -84,18 +88,32 @@ public class loginPage {
 
     public void alertSnackbarMessage(String text) {
         keyword.verifyWordingOnElement(alert_message,text);
+        keyword.wait(3);
+    }
+
+    public void closeSnackbar() {
+        keyword.tapElement(closeSnackbar);
+        keyword.wait(3);
     }
 
     public void alertInlineMessageForEmptyScenario(String text1, String text2) {
         keyword.verifyWordingOnElement(inlineEmail,text1);
         keyword.verifyWordingOnElement(inlinePassword,text2);
+        keyword.wait(3);
 
     }
     public void alertInlineMessageForInvalidFormatEmail(String text1) {
         keyword.verifyWordingOnElement(inlineEmail,text1);
+        keyword.wait(3);
     }
 
     public void verifyCurrentURL(String url) {
         keyword.assert_current_url(url);
+        keyword.wait(3);
+    }
+
+    public void userClickForgotPassword() {
+        keyword.tapElement(label_forgotPassword);
+        keyword.wait(3);
     }
 }

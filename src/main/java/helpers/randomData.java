@@ -1,10 +1,8 @@
 package helpers;
 
 import com.github.javafaker.Faker;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-import java.util.Random;
+
+import java.util.*;
 
 public class randomData {
 
@@ -44,5 +42,9 @@ public class randomData {
 
     public static String getStreetAddress() {
         return faker.address().streetAddress();
+    }
+
+    public static String generateFakeUUID() {
+        return UUID.randomUUID().toString();
     }
 }

@@ -76,13 +76,18 @@ public class registerPage {
     @FindBy(xpath = "/html/body/div/div/div/div[2]/form/p")
     private static WebElement inlineError_Password2;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div/div[2]/div[3]/span[1]")
+    private static WebElement snackbar_successfullyRegister;
+
 
 
     public void inputEmail(String email) {
+        keyword.clearText(input_email);
         keyword.inputText(input_email, email);
     }
 
     public void inputFullname(String fullname) {
+        keyword.clearText(input_fullname);
         keyword.inputText(input_fullname, fullname);
     }
 
@@ -93,10 +98,12 @@ public class registerPage {
     }
 
     public void inputPhonenumber(String phonenumber) {
+        keyword.clearText(input_phoneNumber);
         keyword.inputText(input_phoneNumber, phonenumber);
     }
 
     public void inputPassword(String password) {
+        keyword.clearText(input_password);
         keyword.inputText(input_password, password);
     }
 
@@ -113,13 +120,30 @@ public class registerPage {
     }
     public void verifyInlineErrorForInvalidEmailFormat(String inlineEmail) {
         keyword.verifyWordingOnElement(inlineError_Email, inlineEmail);
+        keyword.wait(3);
     }
 
     public void verifyInlineErrorForInvalidPhoneNumber(String inlinePhoneNumber) {
         keyword.verifyWordingOnElement(inlineError_PhoneNumber2, inlinePhoneNumber);
+        keyword.wait(3);
     }
 
     public void verifyInlineErrorForPasswordNotMatchCriteria(String inlinePassword) {
         keyword.verifyWordingOnElement(inlineError_Password2, inlinePassword);
+        keyword.wait(3);
     }
+
+    public void verifyUserSuccessfullyRegister(String text) {
+        keyword.verifyWordingOnElement(snackbar_successfullyRegister, text);
+        keyword.wait(3);
+    }
+
+    public void userClearAllData() {
+        keyword.clearText(input_email);
+        keyword.clearText(input_fullname);
+        keyword.clearText(input_phoneNumber);
+        keyword.clearText(input_password);
+        keyword.wait(3);
+    }
+
 }
