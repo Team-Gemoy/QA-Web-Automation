@@ -53,4 +53,29 @@ public class forgotPasswordStep {
         getLoginPage().inputEmail("walawepheiaphei@mail.com");
     }
 
+    @And("user input valid email on forgot password page")
+    public void inputValidEmailUser() {
+        getLoginPage().inputEmail("miyali4273@bitofee.com");
+    }
+
+    @Then("user will redirect to input OTP page")
+    public void redirectToInputOTPpage() {
+        getForgotPasswordPage().verifyUserIsOnOTPpage();
+    }
+
+    @When("user input incorret OTP code")
+    public void inputOTPCode() {
+        getForgotPasswordPage().inputOTP();
+    }
+
+    @And("user click Continue button")
+    public void clickContinueButton() {
+        getForgotPasswordPage().clickContinueButton();
+    }
+
+    @Then("user should see an snackbar error message that invalid OTP")
+    public void snackbarErrorExist() {
+        getForgotPasswordPage().verifyThereIsSnackBarError();
+    }
+
 }

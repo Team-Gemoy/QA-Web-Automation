@@ -36,6 +36,18 @@ public class forgotPasswordPage {
     @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/span[1]")
     private static WebElement snacbarError;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div[1]/p")
+    private static WebElement copyOnInputOTP;
+
+    @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/div/input[1]")
+    private static WebElement input_otp;
+
+    @FindBy(xpath = "/html/body/div[1]/div/div[1]/button")
+    private static WebElement continue_button;
+
+    @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/div[1]/span[1]")
+    private static WebElement snackbarError;
+
     public void verifyUserIsOnForgotPasswordPage(String text) {
         keyword.verifyWordingOnElement(titlePage, text);
     }
@@ -56,8 +68,25 @@ public class forgotPasswordPage {
     public void verifyThereIsSnackbarError(String text) {
         keyword.verifyWordingOnElement(snacbarError, text);
         keyword.wait(3);
-
     }
+
+    public void verifyUserIsOnOTPpage() {
+        keyword.verifyWordingOnElement(copyOnInputOTP, "Didn't recieve the email? Click to resend");
+    }
+
+    public void inputOTP() {
+        keyword.inputText(input_otp, "1111");
+    }
+
+    public void clickContinueButton() {
+        keyword.tapElement(continue_button);
+    }
+
+    public void verifyThereIsSnackBarError() {
+        keyword.verifyWordingOnElement(snackbarError, "Check Token Validity Error: OTP is not valid");
+        keyword.wait(3);
+    }
+
 
 
 

@@ -1,12 +1,17 @@
 @forgotPassword
 Feature: Forgot Password
 
-  @forgotPassword  @positive
-  Scenario: As a user, I want the ability to reset my password when needed.
+  @forgotPassword99  @negative
+  Scenario: valid email format
     Given user navigate to the login page "https://dev-team8.netlify.app/login"
     When user click Forgot Password button
-    Then user should see Forgot Password page
-    * user take screenshot "haiyaa owe malah jadi uiux looo"
+    * user input valid email on forgot password page
+    * user click Reset Password button
+    Then user will redirect to input OTP page
+    * user take screenshot "forgot password without filling in the email field"
+    When user input incorret OTP code
+    * user click Continue button
+    Then user should see an snackbar error message that invalid OTP
 
   @forgotPassword  @negative
   Scenario: invalid email format
@@ -51,6 +56,13 @@ Feature: Forgot Password
     * user click Reset Password button
     Then user should see an snackbar error message that unregistered email
     * user take screenshot "forgot password with unregistered email"
+    When user input valid email on forgot password page
+    * user click Reset Password button
+    Then user will redirect to input OTP page
+    * user take screenshot "forgot password without filling in the email field"
+    When user input incorret OTP code
+    * user click Continue button
+    Then user should see an snackbar error message that invalid OTP
 
 
 
