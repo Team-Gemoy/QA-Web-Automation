@@ -17,7 +17,7 @@ public class keyword {
 
     public static void navigateToUrl(String url) {
         driverManager.getInstance().getDriver().get(url);
-        waitFor(2);
+        wait(2);
     }
 
     public static void tapElement(WebElement webElement) {
@@ -38,7 +38,7 @@ public class keyword {
         fileInput.sendKeys(filePath);
     }
 
-    public static void waitFor(int seconds) {
+    public static void wait(int seconds) {
         try {
             TimeUnit.SECONDS.sleep(seconds);
         } catch (InterruptedException e) {

@@ -1,6 +1,7 @@
 package pages;
 
 import helpers.keyword;
+import org.bouncycastle.cms.PasswordRecipientId;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,6 +33,9 @@ public class forgotPasswordPage {
     @FindBy(xpath = "/html/body/div[1]/div/div[1]/p")
     private static WebElement inlineError;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/span[1]")
+    private static WebElement snacbarError;
+
     public void verifyUserIsOnForgotPasswordPage(String text) {
         keyword.verifyWordingOnElement(titlePage, text);
     }
@@ -46,7 +50,15 @@ public class forgotPasswordPage {
 
     public void verifyThereIsInlineError(String text) {
         keyword.verifyWordingOnElement(inlineError, text);
+        keyword.wait(3);
     }
+
+    public void verifyThereIsSnackbarError(String text) {
+        keyword.verifyWordingOnElement(snacbarError, text);
+        keyword.wait(3);
+
+    }
+
 
 
 
