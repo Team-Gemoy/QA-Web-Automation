@@ -48,6 +48,21 @@ public class commonStep {
         getHomePage().userClickLoginButton();
     }
 
+    @Given("user is already login WeFly")
+    public void stepUpLogin() {
+        getHomePage().verifyUserIsNotLogin();
+        getHomePage().userClickLoginButton();
+        getLoginPage().inputEmail("j9pz7c9d1z@greencafe24.com");
+        getLoginPage().inputPassword("P@ssw0rd123");
+        getLoginPage().clickLogin();
+    }
+
+    @Given("user back to hame page")
+    public void navigateToHomePage(){
+        getHomePage().clickHomeButton();
+
+    }
+
     @And("user navigate to register page")
     public void navigateToRegisterPage() {
         getHomePage().userClickSignInButton();

@@ -45,7 +45,7 @@ public class forgotPasswordStep {
 
     @Then("user should see an snackbar error message that unregistered email")
     public void inlineErrorUnregisteredEmail() {
-        getForgotPasswordPage().verifyThereIsSnackbarError("Request failed with status code 401");
+        getForgotPasswordPage().verifyThereIsSnackbarError("User credential don't match an account in our system");
     }
 
     @When("user input unregistered email on forgot password page")
@@ -78,4 +78,8 @@ public class forgotPasswordStep {
         getForgotPasswordPage().verifyThereIsSnackBarError();
     }
 
+    @And("back to login page")
+    public void backToLoginPage() {
+        getForgotPasswordPage().backToLoginPage();
+    }
 }
