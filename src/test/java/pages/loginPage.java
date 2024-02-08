@@ -80,6 +80,7 @@ public class loginPage {
 
     public void clickLogin() {
         keyword.tapElement(button_login);
+        keyword.wait(2);
     }
 
     public void clickCheckbox() {
