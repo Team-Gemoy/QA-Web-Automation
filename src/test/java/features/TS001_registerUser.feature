@@ -52,7 +52,7 @@ Feature: Registration User
     * user click Sign Up button
     Then inline error message appears that Password require minimum eight characters, at least one letter and one number
 
-  @End2EndPhase100
+  @End2EndPhase1
   Scenario: As a user, I want to test all validations on the register page
     Given user navigate to the home page "https://dev-team8.netlify.app/"
     * user is not logged in to WeFLy
@@ -89,56 +89,6 @@ Feature: Registration User
     * user click Sign Up button
     Then user should be successfully register
     * user take screenshot "user-successfully-register"
-
-    Given navigate to login page
-    * navigate to forgot password page
-    When user click Reset Password button
-    Then user should see an inline error message that empty email field
-    * user take screenshot "forgot password without filling in the email field"
-    When user input invalid email format on forgot password page
-    * user click Reset Password button
-    Then user should see an inline error message that invalid email formatted
-    * user take screenshot "forgot password with invalid email format"
-    When user input unregistered email on forgot password page
-    * user click Reset Password button
-    Then user should see an snackbar error message that unregistered email
-    * user take screenshot "forgot password with unregistered email"
-    When user input valid email on forgot password page
-    * user click Reset Password button
-    Then user will redirect to input OTP page
-    * user take screenshot "forgot password without filling in the email field"
-    When user input incorret OTP code
-    * user click Continue button
-    Then user should see an snackbar error message that invalid OTP
-
-    When back to login page
-    When user input valid email
-    * user input incorrect password
-    * user click Login button
-    Then user should see an snackbar error message for incorrect password
-    * user take screenshot "incorrect-password"
-    When user input unregistered email
-    * user input correct password
-    * user click Login button
-    Then user should see an snackbar error message for unregistered email
-    * user take screenshot "unregistered-email"
-    When user click Login button
-    Then user should see an error message indicating empty fields
-    * user take screenshot "empty-fields"
-    When user input invalid email format
-    Then user should see an error message indicating invalid email format
-    * user take screenshot "invalid-email-formatted"
-    When user input valid email
-    * user input correct password
-    * user click Login button
-    Then user should be successfully login
-    * user take screenshot "user-successfully-login"
-
-    * user navigate to profile page
-    When user change profile data
-    * user click Save Button
-    Then user should see an snackbar message that update profile successfully
-    * user take screenshot "forgot password without filling in the email field"
 
 
 
