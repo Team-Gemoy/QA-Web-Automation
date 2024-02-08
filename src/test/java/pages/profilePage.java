@@ -68,8 +68,6 @@ public class profilePage {
         keyword.clearText(input_fullname);
         keyword.clearText(input_city);
         keyword.clearText(input_phoneNumber);
-        keyword.tapElement(input_phoneNumber);
-        keyword.tapElement(cancelButton);
         keyword.wait(2);
     }
 
@@ -77,7 +75,10 @@ public class profilePage {
         keyword.verifyWordingOnElement(inlineMessageFullname, text1);
         keyword.verifyWordingOnElement(inlineMessageCity, text2);
         keyword.verifyWordingOnElement(inlineMessagePhoneNumber, text3);
+    }
 
+    public void inlineErrorPhoneNumberFormat(String text3) {
+        keyword.verifyWordingOnElement(inlineMessagePhoneNumber, text3);
     }
 
     public void inputFullname(String fullname) {

@@ -10,7 +10,16 @@ Feature: Update Profile
     * user click Save Button
     Then user should see an snackbar message that update profile successfully
 
-  @updateProfile1
+  @updateProfile
+  Scenario: -
+    Given user navigate to the home page "https://dev-team8.netlify.app/"
+    * user is already login WeFly
+    * user navigate to profile page
+    When user changes phone number with alphabet
+    * user click Save Button
+    Then user should see an inline error message that Invalid phone number
+
+  @updateProfileNegative
   Scenario: -
     Given user navigate to the home page "https://dev-team8.netlify.app/"
     * user is already login WeFly
