@@ -1,7 +1,7 @@
 @notification
 Feature: Notification
 
-  @notification
+  @notification @positive  @phase1
   Scenario: As a user, I want to see notifications
     Given user navigate to the home page "https://dev-team8.netlify.app/"
     * user is already login WeFly

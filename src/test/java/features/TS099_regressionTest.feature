@@ -129,5 +129,7 @@ Feature: Registration, Forgot Password, Login, Update Profile, Ticket Booking
     Then user redirect to My Booking Page
     * user take screenshot "ticket-booking-successfully"
 
+    # Notification   #
+    #20.  Verify that there is a notification feature for users.
     When user click notification button
     Then user will see the item on the notification page

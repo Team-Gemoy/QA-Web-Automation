@@ -1,8 +1,8 @@
 @forgotPassword
 Feature: Forgot Password
 
-  @forgotPassword99  @negative
-  Scenario: valid email format
+  @forgotPassword  @negative  @phase1
+  Scenario: As a user, I want to make sure that I can't skip the OTP input step if the otp I entered is invalid.
     Given user navigate to the login page "https://dev-team8.netlify.app/login"
     When user click Forgot Password button
     * user input valid email on forgot password page
@@ -13,8 +13,8 @@ Feature: Forgot Password
     * user click Continue button
     Then user should see an snackbar error message that invalid OTP
 
-  @forgotPassword  @negative
-  Scenario: invalid email format
+  @forgotPassword  @negative  @phase1
+  Scenario: As a user, I want to make sure that I can't skip the email input step in the forgot password feature if I enter an email with an invalid format.
     Given user navigate to the login page "https://dev-team8.netlify.app/login"
     When user click Forgot Password button
     * user input invalid email format on forgot password page
@@ -22,19 +22,19 @@ Feature: Forgot Password
     Then user should see an inline error message that invalid email formatted
     * user take screenshot "forgot password without filling in the email field"
 
-  @forgotPassword1  @negative
-  Scenario: As a user, I want to be reminded to provide the necessary information for password reset.
+  @forgotPassword  @negative  @phase1
+  Scenario: As a user, I want to make sure that there is information if I have not entered my email in the forgot password feature.
     Given user navigate to the login page "https://dev-team8.netlify.app/login"
     When user click Forgot Password button
     * user click Reset Password button
     Then user should see an inline error message that empty email field
     * user take screenshot "forgot password with invalid email format"
 
-  @forgotPassword  @negative
-  Scenario: invalid email format
+  @forgotPassword  @negative  @phase1
+  Scenario: As a user, I want to make sure that I can't request a forgot password if I use an unregistered email.
     Given user navigate to the login page "https://dev-team8.netlify.app/login"
     When user click Forgot Password button
-    * user input unregistered email
+    * user input unregistered email on forgot password
     * user click Reset Password button
     Then user should see an snackbar error message that unregistered email
     * user take screenshot "forgot password with unregistered email"
