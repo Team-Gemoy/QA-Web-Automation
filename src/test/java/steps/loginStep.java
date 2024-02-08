@@ -78,4 +78,9 @@ public class loginStep {
     public void navigaeToForgotPasswordPage() {
         getLoginPage().navigateToForgotPasswordPage();
     }
+
+    @And("navigate to forgot password page")
+    public void navigateToForgotPasswordPage() {
+        getLoginPage().navigateToForgotPasswordPage();
+    }
 }

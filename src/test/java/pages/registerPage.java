@@ -79,6 +79,13 @@ public class registerPage {
     @FindBy(xpath = "/html/body/div[1]/div/div/div[2]/div[3]/span[1]")
     private static WebElement snackbar_successfullyRegister;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div/div[2]/label[1]/a")
+    private static WebElement loginLinkText;
+
+    public void clickLoginLinkText() {
+        keyword.tapElement(loginLinkText);
+    }
+
 
 
     public void inputEmail(String email) {
@@ -130,12 +137,12 @@ public class registerPage {
 
     public void verifyInlineErrorForPasswordNotMatchCriteria(String inlinePassword) {
         keyword.verifyWordingOnElement(inlineError_Password2, inlinePassword);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
     public void verifyUserSuccessfullyRegister(String text) {
         keyword.verifyWordingOnElement(snackbar_successfullyRegister, text);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
     public void userClearAllData() {
@@ -143,7 +150,7 @@ public class registerPage {
         keyword.clearText(input_fullname);
         keyword.clearText(input_phoneNumber);
         keyword.clearText(input_password);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
 }

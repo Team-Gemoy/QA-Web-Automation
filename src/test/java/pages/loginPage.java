@@ -88,32 +88,32 @@ public class loginPage {
 
     public void alertSnackbarMessage(String text) {
         keyword.verifyWordingOnElement(alert_message,text);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
     public void closeSnackbar() {
         keyword.tapElement(closeSnackbar);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
     public void alertInlineMessageForEmptyScenario(String text1, String text2) {
         keyword.verifyWordingOnElement(inlineEmail,text1);
         keyword.verifyWordingOnElement(inlinePassword,text2);
-        keyword.wait(3);
+        keyword.wait(2);
 
     }
     public void alertInlineMessageForInvalidFormatEmail(String text1) {
         keyword.verifyWordingOnElement(inlineEmail,text1);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
     public void verifyCurrentURL(String url) {
         keyword.assert_current_url(url);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
     public void userClickForgotPassword() {
         keyword.tapElement(label_forgotPassword);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 }

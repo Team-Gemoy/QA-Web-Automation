@@ -83,5 +83,9 @@ public class registerStep {
         getRegisterPage().userClearAllData();
     }
 
+    @And("navigate to login page")
+    public void navigateToLoginPage() {
+        getRegisterPage().clickLoginLinkText();
+    }
 
 }
