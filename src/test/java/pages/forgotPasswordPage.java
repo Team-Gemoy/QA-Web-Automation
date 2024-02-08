@@ -48,6 +48,13 @@ public class forgotPasswordPage {
     @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/div[1]/span[1]")
     private static WebElement snackbarError;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div[1]/a")
+    private static WebElement backToLoginPage;
+
+    public void backToLoginPage() {
+        keyword.tapElement(backToLoginPage);
+    }
+
     public void verifyUserIsOnForgotPasswordPage(String text) {
         keyword.verifyWordingOnElement(titlePage, text);
     }

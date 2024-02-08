@@ -79,6 +79,13 @@ public class registerPage {
     @FindBy(xpath = "/html/body/div[1]/div/div/div[2]/div[3]/span[1]")
     private static WebElement snackbar_successfullyRegister;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div/div[2]/label[1]/a")
+    private static WebElement loginLinkText;
+
+    public void clickLoginLinkText() {
+        keyword.tapElement(loginLinkText);
+    }
+
 
 
     public void inputEmail(String email) {
