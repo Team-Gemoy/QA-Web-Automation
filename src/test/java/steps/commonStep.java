@@ -57,7 +57,7 @@ public class commonStep {
         getLoginPage().clickLogin();
     }
 
-    @Given("user back to hame page")
+    @Given("user back to home page")
     public void navigateToHomePage(){
         getHomePage().clickHomeButton();
 

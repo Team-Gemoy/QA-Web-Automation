@@ -30,6 +30,13 @@ public class updateProfileStep {
         getProfilePage().inputPhoneNumber("083275432432");
     }
 
+    @When("user changes phone number with alphabet")
+    public void incorrectPhoneNumberFormat() {
+        getProfilePage().inputFullname(randomData.getFullName());
+        getProfilePage().inputCity(randomData.getCity());
+        getProfilePage().inputPhoneNumber("pakeabjadhehehehe");
+    }
+
     @And("user click Save Button")
     public void clickSaveButton() {
         getProfilePage().clickSaveButton();
@@ -38,6 +45,12 @@ public class updateProfileStep {
     @Then("user should see an snackbar message that update profile successfully")
     public void updateSuccessfully() {
         getProfilePage().verifyUpdateProfileSuccessfully("Your account has been updated");
+    }
+
+
+    @Then("user should see an inline error message that Invalid phone number")
+    public void inlineInvalidPhoneNumberFormat() {
+        getProfilePage().inlineErrorPhoneNumberFormat("Invalid phone number");
     }
 
     @When("user clear all mandatory field")

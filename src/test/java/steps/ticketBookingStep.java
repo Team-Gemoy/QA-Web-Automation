@@ -2,6 +2,7 @@ package steps;
 
 import factories.driverManager;
 import helpers.keyword;
+import helpers.randomData;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -63,13 +64,13 @@ public class ticketBookingStep {
         getOrderDetailsPage().clickPencilIcon1();
         keyword.wait(3);
         getOrderDetailsPage().clickSaveButton();
-        getOrderDetailsPage().fillInAdultPassengerData();
+        getOrderDetailsPage().fillInAdultPassengerData(randomData.getNationality());
         getOrderDetailsPage().clickSaveButton();
-//        getOrderDetailsPage().clickPencilIcon2();
-        keyword.wait(5);
+        getOrderDetailsPage().clickPencilIcon2();
+        keyword.wait(3);
         getOrderDetailsPage().clickSaveButton();
         getOrderDetailsPage().inlineErrorExistOnOrderDetails();
-        getOrderDetailsPage().fillInChildPassengerData();
+        getOrderDetailsPage().fillInChildPassengerData(randomData.getFirstName(), randomData.getLastName(), randomData.getNationality(), "16", "January", "2017");
         getOrderDetailsPage().clickSaveButton();
     }
 
