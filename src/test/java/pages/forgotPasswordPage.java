@@ -69,12 +69,12 @@ public class forgotPasswordPage {
 
     public void verifyThereIsInlineError(String text) {
         keyword.verifyWordingOnElement(inlineError, text);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
     public void verifyThereIsSnackbarError(String text) {
         keyword.verifyWordingOnElement(snacbarError, text);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
     public void verifyUserIsOnOTPpage() {
@@ -91,7 +91,7 @@ public class forgotPasswordPage {
 
     public void verifyThereIsSnackBarError() {
         keyword.verifyWordingOnElement(snackbarError, "Check Token Validity Error: OTP is not valid");
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
 

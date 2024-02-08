@@ -137,12 +137,12 @@ public class registerPage {
 
     public void verifyInlineErrorForPasswordNotMatchCriteria(String inlinePassword) {
         keyword.verifyWordingOnElement(inlineError_Password2, inlinePassword);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
     public void verifyUserSuccessfullyRegister(String text) {
         keyword.verifyWordingOnElement(snackbar_successfullyRegister, text);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
     public void userClearAllData() {
@@ -150,7 +150,7 @@ public class registerPage {
         keyword.clearText(input_fullname);
         keyword.clearText(input_phoneNumber);
         keyword.clearText(input_password);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
 }

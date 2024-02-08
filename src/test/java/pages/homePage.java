@@ -92,7 +92,7 @@ public class homePage {
     }
     public void verifyUserAlreadyOnDashboard() {
         keyword.verifyWordingOnElement(title_dashboard, "WeFly - Limitless Travel Solutions");
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
     public void verifyUserIsNotLogin() {
@@ -102,12 +102,12 @@ public class homePage {
 
     public void userClickLoginButton() {
         keyword.tapElement(loginButtonOnHeader);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
     public void userClickSignInButton() {
         keyword.tapElement(SignUpButtonOnHeader);
-        keyword.wait(3);
+        keyword.wait(2);
     }
 
 

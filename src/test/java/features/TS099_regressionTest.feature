@@ -1,5 +1,5 @@
 @regression
-Feature: Registration, Forgot Password, Login, Update Profile
+Feature: Registration, Forgot Password, Login, Update Profile, Ticket Booking
 
   @regression @end2end
   Scenario: As a user, I wanted to test all the functional features in WeFly
@@ -91,6 +91,12 @@ Feature: Registration, Forgot Password, Login, Update Profile
     * user take screenshot "update-profile-data-successfully"
 
     Given user back to hame page
-    When user input departure airport
+    When user add number of passenger
+    * user select airlines type
+    * user input departure airport
     * user input destination airport
     * user click Search button
+    * user click Choose button on list
+    * user filled in all mandatory data in order details
+    * user click Pay Now button
+    Then user redirect to My Booking Page

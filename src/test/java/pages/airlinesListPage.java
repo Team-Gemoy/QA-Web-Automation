@@ -22,6 +22,6 @@ public class airlinesListPage {
 
     public void clickChooseButton() {
         keyword.tapElement(chooseButton);
-        keyword.wait(2);
+        keyword.wait(1);
     }
 }
