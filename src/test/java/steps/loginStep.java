@@ -17,7 +17,7 @@ public class loginStep {
     }
     @When("user input valid email")
     public void inputValidEmail() {
-        getLoginPage().inputEmail("miyali4273@bitofee.com");
+        getLoginPage().inputEmail("lateka9002@fahih.com");
     }
 
     @When("user input unregistered email")
@@ -25,11 +25,16 @@ public class loginStep {
         getLoginPage().inputEmail("unregistered@dispostable.com");
     }
 
+    @When("user input unregistered email on forgot password")
+    public void inputUnregisteredEmailOnForgotPassword() {
+        getLoginPage().inputEmail("randomemail@dispostable.com");
+    }
+
     @When("user input invalid email format")
     public void userinputInvalidEmail() {
         loginPage loginPage = getLoginPage();
         loginPage.clickLogin();
-        loginPage.inputEmail("IkanHiuMakanTomat.Com");
+        loginPage.inputEmail("ikanhiumakantomatdotcom");
     }
 
     @And("user input correct password")
@@ -66,7 +71,6 @@ public class loginStep {
     @Then("user should see an error message indicating empty fields")
     public void userEmptyField() {
         getLoginPage().alertInlineMessageForEmptyScenario("Email is required", "Password is required");
-        getLoginPage().closeSnackbar();
     }
 
     @Then("user should see an error message indicating invalid email format")

@@ -52,7 +52,7 @@ public class commonStep {
     public void stepUpLogin() {
         getHomePage().verifyUserIsNotLogin();
         getHomePage().userClickLoginButton();
-        getLoginPage().inputEmail("j9pz7c9d1z@greencafe24.com");
+        getLoginPage().inputEmail("lateka9002@fahih.com");
         getLoginPage().inputPassword("P@ssw0rd123");
         getLoginPage().clickLogin();
     }
