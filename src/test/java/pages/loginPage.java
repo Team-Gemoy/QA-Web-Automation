@@ -18,16 +18,16 @@ public class loginPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[1]/form/div[1]/label")
+    @FindBy(xpath = "/html/body/div/div/div[1]/form/div[1]/label")
     private static WebElement label_email;
 
     @FindBy(xpath = "/html/body/div[1]/div/div[1]/form/div[2]/label")
     private static WebElement label_password;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[1]/form/div[3]/div/label")
+    @FindBy(xpath = "/html/body/div/div/div[1]/form/div[3]/div/label")
     private static WebElement label_rememberMe;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[1]/form/div[3]/a")
+    @FindBy(xpath = "/html/body/div/div/div[1]/form/div[3]/a")
     private static WebElement label_forgotPassword;
 
     @FindBy(id = "Email")
@@ -46,7 +46,7 @@ public class loginPage {
     @FindBy(xpath = "/html/body/div[1]/div/div[1]/form/p[2]")
     private static WebElement inlinePassword;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[1]/h1")
+    @FindBy(xpath = "/html/body/div/div/div[1]/h1")
     private WebElement title_page;
     @FindBy(id = "check")
     private WebElement checkbox_rememberMe;

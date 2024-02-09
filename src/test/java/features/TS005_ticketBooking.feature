@@ -11,6 +11,7 @@ Feature: Ticket Booking
     * user input destination airport
     * user click Search button
     * user click Choose button on list
+    Then user navigate to login page after click Choose button
 
   @ticketBooking @positive  @phase1
   Scenario: As a user, I want to successfully book a flight ticket. (e2e flight ticket booked) & I want to make sure that the validations on the order details are all working (e2e validation of order details)
