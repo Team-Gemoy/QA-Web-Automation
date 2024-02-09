@@ -53,6 +53,14 @@ public class homePage {
     @FindBy(xpath = "/html/body/div[1]/section[1]/div[1]/div/div/div[1]/div[2]/div[2]/div/div/div[1]/div[2]/input")
     private static WebElement typeOfAirlines;
 
+    @FindBy(xpath = "/html/body/div[1]/nav/div[2]/ul/li[2]")
+    private static WebElement MyBookingButton;
+
+    public void clickMyBookingButton() {
+        keyword.tapElement(MyBookingButton);
+        keyword.wait(1);
+    }
+
     public void enterPassengerType() {
         keyword.tapElement(numberOfPassengerTypes);
         keyword.tapElement(addChildPassengers);

@@ -1,7 +1,7 @@
 @login
 Feature: Login User
 
-  @login1 @positive
+  @login @positive  @phase1
   Scenario: As a user, I want to ensure that I can successfully log in to the application using my credentials.
     Given user navigate to the login page "https://dev-team8.netlify.app/login"
     When user input valid email
@@ -10,7 +10,7 @@ Feature: Login User
     Then user should be successfully login
     * user take screenshot "user-successfully-login"
 
-  @login2 @negative
+  @login @negative  @phase1
   Scenario: As a user, I want the system to notify me when I enter an incorrect password during the login process.
     Given user navigate to the login page "https://dev-team8.netlify.app/login"
     When user input valid email
@@ -19,7 +19,7 @@ Feature: Login User
     Then user should see an snackbar error message for incorrect password
     * user take screenshot "incorrect-password"
 
-  @login2 @negative
+  @login @negative  @phase1
   Scenario: As a user, I want to be informed if I enter an unregistered "Email" during the login attempt.
     Given user navigate to the login page "https://dev-team8.netlify.app/login"
     When user input unregistered email
@@ -28,14 +28,14 @@ Feature: Login User
     Then user should see an snackbar error message for unregistered email
     * user take screenshot "unregistered-email"
 
-  @login2 @negative
+  @login @negative  @phase1
   Scenario: As a user, I would like to leave the "Email" or "Password" fields, or both, blank during the login process.
     Given user navigate to the login page "https://dev-team8.netlify.app/login"
     When user click Login button
     Then user should see an error message indicating empty fields
     * user take screenshot "empty-fields"
 
-  @login2 @negative
+  @login @negative  @phase1
   Scenario: As a user, I want to enter an incorrectly formatted email (without @)
     Given user navigate to the login page "https://dev-team8.netlify.app/login"
     When user input invalid email format

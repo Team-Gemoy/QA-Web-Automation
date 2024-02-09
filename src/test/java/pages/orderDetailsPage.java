@@ -22,10 +22,10 @@ public class orderDetailsPage {
     @FindBy(xpath = "/html/body/div[1]/section/div[1]/div/div[1]/div[2]/div[1]/div/div[1]/label/div")
     private static WebElement switchButton;
 
-    @FindBy(css = ".text-primary-blue.text-lg.cursor-pointer:nth-of-type(1)")
+    @FindBy(id = "1")
     private static WebElement pencil_icon1;
 
-    @FindBy(css = ".text-primary-blue.text-lg.cursor-pointer:nth-of-type(2)")
+    @FindBy(id = "2")
     private static WebElement pencil_icon2;
 
     @FindBy(name = "nationality")
@@ -69,7 +69,7 @@ public class orderDetailsPage {
 
     public void verifyStepUpTicketBookingSuccessfully() {
         keyword.verifyWordingOnElement(OpenPaymentLinkButtonOnMyBookingPage, "Open Payment Link");
-        keyword.wait(7);
+        keyword.wait(5);
     }
 
     public void clickPayNowButton() {
@@ -89,17 +89,17 @@ public class orderDetailsPage {
         keyword.tapElement(pencil_icon2);
         keyword.wait(1);
     }
-    public void fillInAdultPassengerData() {
-        keyword.inputText(input_nationality, "Indonesia");
+    public void fillInAdultPassengerData(String nationality) {
+        keyword.inputText(input_nationality, nationality);
     }
 
-    public void fillInChildPassengerData() {
-        keyword.inputText(input_firstName, "Tina");
-        keyword.inputText(input_lastName, "Agustina");
-        keyword.inputText(input_nationality, "Indonesia");
-        keyword.inputText(input_day, "13" + Keys.ENTER);
-        keyword.inputText(input_month, "January" + Keys.ENTER);
-        keyword.inputText(input_year, "2016" + Keys.ENTER);
+    public void fillInChildPassengerData(String firstName, String lastName, String nationality, String day, String month, String year) {
+        keyword.inputText(input_firstName, firstName);
+        keyword.inputText(input_lastName, lastName);
+        keyword.inputText(input_nationality, nationality);
+        keyword.inputText(input_day, day + Keys.ENTER);
+        keyword.inputText(input_month, month + Keys.ENTER);
+        keyword.inputText(input_year, year + Keys.ENTER);
         keyword.tapElement(missRadioButton);
     }
 

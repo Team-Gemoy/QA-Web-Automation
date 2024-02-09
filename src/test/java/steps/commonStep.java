@@ -46,18 +46,26 @@ public class commonStep {
     @And("user navigate to login page")
     public void navigateToLoginPage() {
         getHomePage().userClickLoginButton();
+        getLoginPage().verifyCurrentURL("https://dev-team8.netlify.app/login");
+        getLoginPage().verifyComponentOnLoginPage("WELCOME BACK", "Email", "Password", "Remember me", "Forgot password", "Sign Up");
+    }
+
+    @And("user navigate to login page after click Choose button")
+    public void navigateToLoginPageAfterTapChoose() {
+        getLoginPage().verifyCurrentURL("https://dev-team8.netlify.app/login");
+        getLoginPage().verifyComponentOnLoginPage("WELCOME BACK", "Email", "Password", "Remember me", "Forgot password", "Sign Up");
     }
 
     @Given("user is already login WeFly")
     public void stepUpLogin() {
         getHomePage().verifyUserIsNotLogin();
         getHomePage().userClickLoginButton();
-        getLoginPage().inputEmail("j9pz7c9d1z@greencafe24.com");
+        getLoginPage().inputEmail("lateka9002@fahih.com");
         getLoginPage().inputPassword("P@ssw0rd123");
         getLoginPage().clickLogin();
     }
 
-    @Given("user back to hame page")
+    @Given("user back to home page")
     public void navigateToHomePage(){
         getHomePage().clickHomeButton();
 

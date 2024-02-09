@@ -11,6 +11,17 @@ public class randomData {
     public static String getFullName() {
         return faker.name().fullName();
     }
+    public static String getFirstName() {
+        return faker.name().firstName();
+    }
+
+    public static String getLastName() {
+        return faker.name().lastName();
+    }
+
+    public static String getNationality() {
+        return faker.country().name();
+    }
     public static String getEmail() {
         return faker.internet().emailAddress();
     }
