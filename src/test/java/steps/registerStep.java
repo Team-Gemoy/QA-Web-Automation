@@ -15,29 +15,33 @@ public class registerStep {
 
     @When("user input a valid email")
     public void inputValidEmail() {
-        getRegisterPage().inputEmail(randomData.generateFakeUUID() + "@gmail.com");
+        getRegisterPage().inputEmail(randomData.getEmail());
     }
 
     @When("user input a invalid email format")
     public void inputInValidEmail() {
-        getRegisterPage().inputEmail("IkanHiuMakanTomatILoveYouSoMuch.CoM");
+        getRegisterPage().inputEmail("ikanhiumakantomatdotcom");
     }
     @And("user input a fullname")
     public void inputFullname() {
         getRegisterPage().inputFullname(randomData.getFullName());
     }
+
     @And("user input a date of birth")
     public void inputDateOfBirth() {
         getRegisterPage().inputDayOfBirth("12","July", "1990");
     }
+
     @And("user input a phone number")
     public void inputPhoneNumber() {
         getRegisterPage().inputPhonenumber("084732543524");
     }
+
     @And("user input a phone number using alphabetic characters")
     public void inputPhoneNumberAlphabeticCharacters() {
         getRegisterPage().inputPhonenumber("pakealphabethehe");
     }
+
     @And("user input a password that matches the criteria")
     public void inputPassword() {
         getRegisterPage().inputPassword("P@ssw0rd123");
