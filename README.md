@@ -36,3 +36,4 @@ The folder structure is as following:
     ├─ .gitignore
     ├─ pom.xml
     ├─ README.MD
+![Screenshot 2024-02-12 153319](https://github.com/Team-Gemoy/QA-Web-Automation/assets/112541317/3b7b87ba-36b5-4a55-8073-64341b49d719)
