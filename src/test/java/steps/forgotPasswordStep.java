@@ -55,7 +55,7 @@ public class forgotPasswordStep {
 
     @And("user input valid email on forgot password page")
     public void inputValidEmailUser() {
-        getLoginPage().inputEmail("miyali4273@bitofee.com");
+        getLoginPage().inputEmail("m88mbutftc@waterisgone.com");
     }
 
     @Then("user will redirect to input OTP page")

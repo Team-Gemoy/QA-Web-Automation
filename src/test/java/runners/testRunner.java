@@ -12,7 +12,7 @@ import java.time.Duration;
 
 @CucumberOptions(features = "src/test/java/features",
         glue = "steps",
-        tags = "@register",
+        tags = "@phase1",
         plugin = {
                 "pretty",
                 "html:reports/cucumber-result/cucumber-reports.html",

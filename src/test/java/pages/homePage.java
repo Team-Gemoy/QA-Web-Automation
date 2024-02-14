@@ -20,13 +20,13 @@ public class homePage {
     @FindBy(xpath = "/html/body/div[1]/section/div/div/div/h1")
     private static WebElement title_dashboard;
 
-    @FindBy(xpath = "/html/body/div[1]/nav/div[1]/div/div/a[1]")
+    @FindBy(xpath = "/html/body/div/nav/div[1]/div/div/div/a[1]")
     private static WebElement loginButtonOnHeader;
 
-    @FindBy(xpath = "/html/body/div[1]/nav/div[1]/div/div/a[2]")
+    @FindBy(xpath = "/html/body/div/nav/div[1]/div/div/div/a[2]")
     private static WebElement SignUpButtonOnHeader;
 
-    @FindBy(xpath = "/html/body/div[1]/nav/div[1]/div/div/a")
+    @FindBy(xpath = "/html/body/div/nav/div[1]/div/div/div/a")
     private static WebElement profileButtonOnHeader;
 
     @FindBy(xpath = "/html/body/div/div/nav/div[2]/ul/li[1]")

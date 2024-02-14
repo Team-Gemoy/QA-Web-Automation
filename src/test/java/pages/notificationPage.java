@@ -19,19 +19,19 @@ public class notificationPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[1]/div/div[2]/a[3]")
+    @FindBy(xpath = "/html/body/div/div/div[1]/div/div[1]/div/div[2]/a[3]/p")
     private static WebElement notifButton;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/div/div[1]/div[2]/h1")
+    @FindBy(xpath = "/html/body/div/div/div[1]/div/div[2]/div/div[1]/div[2]/h1")
     private static WebElement flightUpdateCopy;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/div/div[2]/div[2]/h1")
+    @FindBy(xpath = "/html/body/div/div/div[1]/div/div[2]/div/div[2]/div[2]/h1")
     private static WebElement boarding0ReminderCopy;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/div/div[3]/div[2]/h1")
+    @FindBy(xpath = "/html/body/div/div/div[1]/div/div[2]/div/div[3]/div[2]/h1")
     private static WebElement arrivalInformationCopy;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/div/div[4]/div[2]/h1")
+    @FindBy(xpath = "/html/body/div/div/div[1]/div/div[2]/div/div[4]/div[2]/h1")
     private static WebElement weatherAdvisoryCopy;
 
     public void clickNotifButton() {

@@ -46,7 +46,7 @@ public class profilePage {
     @FindBy(id = "phoneNumber")
     private static WebElement input_phoneNumber;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/div/div/div[2]/button[2]")
+    @FindBy(xpath = "/html/body/div/div/div[1]/div/div[2]/div/div/div[2]/button[2]")
     private static WebElement saveButton;
 
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div/div[1]/div[2]")
@@ -58,7 +58,7 @@ public class profilePage {
     @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/div/div/div[1]/div[2]/div/div[3]/div[1]/p")
     private static WebElement inlineMessageCity;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/div/div/div[1]/div[2]/div/div[3]/div[2]/p")
+    @FindBy(xpath = "/html/body/div/div/div[1]/div/div[2]/div/div/div[1]/div[2]/div/div[3]/div[2]/p")
     private static WebElement inlineMessagePhoneNumber;
 
     @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[2]/div/div/div[2]/button[1]")
