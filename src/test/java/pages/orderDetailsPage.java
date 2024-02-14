@@ -64,7 +64,7 @@ public class orderDetailsPage {
     @FindBy(xpath = "/html/body/div[1]/section/div[1]/div/div[2]/div[2]/button")
     private static WebElement PayNowButton;
 
-    @FindBy(xpath = "/html/body/div/div/div[1]/div[2]/div/div[1]/div[3]/button")
+    @FindBy(xpath = "/html/body/div/div/div[1]/div/div[2]/div/div[1]/div[4]/button")
     private static WebElement OpenPaymentLinkButtonOnMyBookingPage;
 
     public void verifyStepUpTicketBookingSuccessfully() {

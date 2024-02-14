@@ -17,7 +17,7 @@ public class loginStep {
     }
     @When("user input valid email")
     public void inputValidEmail() {
-        getLoginPage().inputEmail("lateka9002@fahih.com");
+        getLoginPage().inputEmail("m88mbutftc@waterisgone.com");
     }
 
     @When("user input unregistered email")

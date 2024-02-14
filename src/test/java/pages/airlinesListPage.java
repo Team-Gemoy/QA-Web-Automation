@@ -17,7 +17,7 @@ public class airlinesListPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @FindBy(xpath = "/html/body/div/div/div[2]/div[2]/div[2]/div[3]/button")
+    @FindBy(xpath = "/html/body/div/div/div/div[2]/div[2]/div[2]/div[3]/button")
     private static WebElement chooseButton;
 
     public void clickChooseButton() {

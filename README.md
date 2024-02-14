@@ -1,23 +1,6 @@
 # QA-Web-Automation
 
 
-## Java and Maven Configuration:
-
-- **Java Version:**
-    - Source and target compatibility set to Java 20.
-
-- **Maven Compiler Plugin:**
-    - Version 3.11.0
-
-- **Surefire Plugin:**
-    - Version 3.0.0-M5
-    - Configured to run TestNG tests specified in the `testng.xml` file.
-    - Uses Maven properties, including the suite XML file (`testng.xml`).
-
-## Folder Structure
-
-The folder structure is as following:
-
     QA-Web-Automation
     ├─ report
     ├─ src
@@ -35,5 +18,4 @@ The folder structure is as following:
     ├─ target                            # Reports are generated in the target/reports directory
     ├─ .gitignore
     ├─ pom.xml
-    ├─ README.MD
-![Screenshot 2024-02-12 153319](https://github.com/Team-Gemoy/QA-Web-Automation/assets/112541317/3b7b87ba-36b5-4a55-8073-64341b49d719)
+
