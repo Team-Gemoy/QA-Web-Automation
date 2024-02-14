@@ -18,4 +18,4 @@
     ├─ target                            # Reports are generated in the target/reports directory
     ├─ .gitignore
     ├─ pom.xml
-    ├─ README.MD
+
